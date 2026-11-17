@@ -6,6 +6,12 @@
 
 **webread-mcp** is a secure, standalone webpage reader Model Context Protocol (MCP) server. It fetches and extracts clean, readable text from arbitrary websites while protecting Artificial Intelligence (AI) assistants against Server-Side Request Forgery (SSRF), hidden text manipulation, and prompt injection or hijacking attacks.
 
+## How It Works
+
+![How webread-mcp uses the CLEF decision model: SSRF check, hidden-content stripping, chunking, two typed questions per chunk, and three verdicts (clean, quarantine, unverified)](assets/clef-diagram.png)
+
+CLEF is a decision model, not a text generator: for each chunk it answers two questions defined in code (`injection: clean | injection`, `hijack: on_task | hijack`) with a probability per option. A score of 0.5 or more on either question quarantines the page. Errors, timeouts and an exhausted quota return `unverified`, never `clean`.
+
 ---
 
 ## Key Features
