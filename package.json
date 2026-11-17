@@ -1,0 +1,38 @@
+{
+  "name": "webread-mcp",
+  "version": "0.1.0",
+  "description": "Secure webpage reader MCP server with SSRF protection, content extraction, and prompt injection scanning",
+  "main": "src/server.js",
+  "bin": {
+    "webread-mcp": "bin/webread-mcp.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "web-reader",
+    "security",
+    "ssrf-protection",
+    "prompt-injection"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elbartl/webread-mcp.git"
+  },
+  "files": [
+    "bin",
+    "src",
+    "LICENSE",
+    "README.md",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "docs",
+    "examples"
+  ]
+}

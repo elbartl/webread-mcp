@@ -1,0 +1,31 @@
+{
+  "literals": [
+    {
+      "value": "Jane Doe",
+      "replace": "[NAME]",
+      "caseInsensitive": true
+    },
+    {
+      "value": "example.com",
+      "replace": "[DOMAIN]",
+      "caseInsensitive": true
+    },
+    {
+      "value": "corp-internal-server-01",
+      "replace": "[HOSTNAME]",
+      "caseInsensitive": true
+    }
+  ],
+  "patterns": [
+    {
+      "regex": "\\bACCT-\\d{6,10}\\b",
+      "flags": "g",
+      "replace": "[ACCOUNT_ID]"
+    },
+    {
+      "regex": "\\bUSER-[A-Za-z0-9]{8}\\b",
+      "flags": "gi",
+      "replace": "[USER_ID]"
+    }
+  ]
+}
