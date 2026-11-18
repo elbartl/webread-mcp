@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Added agent skill `skills/webread/SKILL.md` (repository only, not included in the npm package).
 
+### Changed
+- README: step-by-step installation with config file locations for Claude Code, Claude Desktop (macOS/Windows), Cursor and Codex CLI; how to get Cloudflare credentials; self-test with shell variables; skill install paths; files created in the state directory.
+- README: new "Anonymization" section (scope, built-in rules, own rules file, testing, enabling with an absolute path) and "For AI Agents" section.
+- docs/AGENT_INSTALL.md: config locations table, merge-not-overwrite rule, skill install step, safer anonymization step, restart before verification.
+
 ## [0.1.0] - 2026-11-17
 
 ### Added

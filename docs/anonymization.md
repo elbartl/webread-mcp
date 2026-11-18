@@ -11,6 +11,8 @@ This document explains how anonymization works, what data to redact, how to conf
 - **Cloud Backends (e.g., Cloudflare Workers AI `clef`):** Content chunks are transmitted over the internet to Cloudflare Workers AI for prompt injection classification. Redacting private identifiers, hostnames, user names, and account numbers ensures external services never see sensitive information.
 - **Local Backends (e.g., Ollama):** When running locally with Ollama, data never leaves your machine. Anonymization remains active as a defense-in-depth measure, but is less critical than with cloud-based inference.
 
+**Scope:** anonymization changes only the text sent to the scanner backend. The page URL is not sent to the scanner, and the agent still receives the original, unredacted page text.
+
 ---
 
 ## Built-In Rules
@@ -30,6 +32,8 @@ You can supply additional custom rules via an environment variable pointing to a
 ```bash
 export WEBREAD_ANONYMIZE_FILE="$HOME/.config/webread/anonymize.json"
 ```
+
+In an MCP client config file (JSON or TOML), put the variable in the server's `env` block with an **absolute path**, e.g. `"WEBREAD_ANONYMIZE_FILE": "/home/you/.config/webread/anonymize.json"`. `~` and `$HOME` are not expanded there. Set `chmod 600` on the file and keep it out of version control: it lists your private data. Step-by-step setup: [README → Anonymization](../README.md#anonymization).
 
 ### What to Include in Your Custom File
 - **Personal and organizational names:** User full name, usernames, organization names.
