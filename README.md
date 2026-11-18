@@ -118,6 +118,12 @@ Add to your Cursor MCP settings (`.cursor/mcp.json`):
 
 ---
 
+## Agent skill
+
+A ready-to-use agent skill (`skills/webread/SKILL.md`) teaches AI assistants when and how to use `web_read` and how to safely handle verdicts. To install it, copy the `skills/webread/` directory to `~/.claude/skills/webread/` (Claude Code) or to your agent's skills directory.
+
+---
+
 ## The `web_read` Tool
 
 ### Tool Signature
